@@ -552,8 +552,8 @@ void dumpRawMessageJS(char *descr, unsigned char *msg,
         if (fixable > 255) fix2 = fixable >> 8;
     }
 
-    if ((fp = fopen("frames.js","a")) == NULL) {
-        fprintf(stderr, "Error opening frames.js: %s\n", strerror(errno));
+    if ((fp = fopen("/tmp/frames.js","a")) == NULL) {
+        fprintf(stderr, "Error opening /tmp/frames.js: %s\n", strerror(errno));
         exit(1);
     }
 
@@ -2470,7 +2470,7 @@ void showHelp(void) {
 "                  C = Log frames with good CRC\n"
 "                  p = Log frames with bad preamble\n"
 "                  n = Log network debugging info\n"
-"                  j = Log frames to frames.js, loadable by debug.html.\n"
+"                  j = Log /tmp/frames to frames.js, loadable by debug.html.\n"
     );
 }
 
